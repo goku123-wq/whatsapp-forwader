@@ -1,0 +1,23 @@
+{
+  "source_group": "School Group Name",
+  "destination_group": "Class Group Name",
+  "poll_interval_seconds": 5,
+  "keywords": [
+    "announcement",
+    "important",
+    "notice",
+    "update",
+    "attention",
+    "deadline",
+    "exam",
+    "schedule",
+    "reminder"
+  ],
+  "patterns": [
+    "📢",
+    "⚠️",
+    "📝",
+    "🚨"
+  ],
+  "message_limit_per_poll": 10
+}
