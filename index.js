@@ -125,13 +125,25 @@ client.initialize();
 
 // Setup the Express Server Routes
 app.get('/', (req, res) => {
-    let html = `<h1>WhatsApp Forwarder Status: ${botStatus}</h1>`;
+    let html = `
+    <html>
+        <head>
+            <meta http-equiv="refresh" content="10">
+            <style>
+                body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+                img { border: 10px solid white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+            </style>
+        </head>
+        <body>
+            <h1>WhatsApp Forwarder Status: ${botStatus}</h1>
+    `;
     
     if (qrCodeDataURL) {
-        html += `<p>Scan the QR code below to log in:</p>`;
+        html += `<p>Scan the QR code below to log in. (This page auto-refreshes every 10 seconds to keep the code active)</p>`;
         html += `<img src="${qrCodeDataURL}" alt="QR Code" />`;
     }
     
+    html += `</body></html>`;
     res.send(html);
 });
 
